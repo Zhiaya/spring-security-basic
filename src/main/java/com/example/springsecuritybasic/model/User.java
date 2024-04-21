@@ -19,6 +19,11 @@ public class User {
     @Column(unique = true)
     private String email;
     private String password;
-    @ManyToMany
+
+    private boolean isDisabled; //false, true -> disable
+    private boolean isAccountLocked; //true if account is locked
+    private boolean isAccountExpired; //true if account is expired
+    private boolean isCredentialExpired;
+    @ManyToMany(fetch = FetchType.EAGER)
     Set<Role> roles;
 }
