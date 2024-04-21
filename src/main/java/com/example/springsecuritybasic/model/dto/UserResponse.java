@@ -6,8 +6,8 @@ import java.util.Set;
 
 @Builder
 public record UserResponse(
-        String name,
-        String gender,
+        String id,
+        String email,
         Set<String> roles
 ) {
 }
